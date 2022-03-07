@@ -1,0 +1,7 @@
+{
+  "name": "Strictly Business",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
