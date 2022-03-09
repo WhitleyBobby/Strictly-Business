@@ -1,20 +1,22 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+import { initializeApp } from "firebase/app";
 
 export const environment = {
-  production: false, 
+
   firebase: {
-    apiKey: "AIzaSyA1CpZMbnKW067bfbsdyFVbfZsUjx2WuK4",
-  authDomain: "strictly-business-58b1f.firebaseapp.com",
-  databaseURL: "https://strictly-business-58b1f-default-rtdb.firebaseio.com",
-  projectId: "strictly-business-58b1f",
-  storageBucket: "strictly-business-58b1f.appspot.com",
-  messagingSenderId: "769600597413",
-  appId: "1:769600597413:web:e68c9ad9e842912201cc4c",
-  measurementId: "G-2N12WNFSFK"
-  }
+    apiKey: "AIzaSyDibjqqCFmEttJrTCyIqDAgDi-RYn9Bkzk",
+    authDomain: "strictly-business-ee797.firebaseapp.com",
+    projectId: "strictly-business-ee797",
+    storageBucket: "strictly-business-ee797.appspot.com",
+    messagingSenderId: "982581197741",
+    appId: "1:982581197741:web:53f3f144fcc3c428a07f24"
+  },
+  production: false
 };
+
+// const app = initializeApp(firebase);
 
 /*
  * For easier debugging in development mode, you can import the following file

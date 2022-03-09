@@ -17,8 +17,8 @@ const routes: Routes = [
     ...canActivate(redirectUnauthorizedToLogin)
   },
   {
-    path: '',
-    redirectTo: 'home',
+    path: ' ',
+    redirectTo: '',
     pathMatch: 'full'
   },
 ];

@@ -33,4 +33,37 @@ export class LoginPage implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
+
+  async singUp() {
+    const loading = await this.loadingController.create();
+    await loading.present();
+    const user =  this.authService.signUp(this.credentials.value);
+    await loading.dismiss();
+
+    if(user){
+      this.router.navigateByUrl('/home', {replaceUrl: true });
+    }else{
+      this.showAlert('Registration was unsuccessful', 'Please try again');
+    }
+  }
+
+  async login() {
+    const loading = await this.loadingController.create();
+    await loading.present();
+    const user =  this.authService.login(this.credentials.value);
+    await loading.dismiss();
+
+    if(user){
+      this.router.navigateByUrl('/home', {replaceUrl: true });
+    }else{
+      this.showAlert('login was unsuccessful', 'Please try again');
+    }
+  }
+
+  async showAlert(header, message) {
+    const alert = await this.alertController.create({
+      header, message, buttons: ['OK'],
+    });
+    await alert.present();
+  }
 }

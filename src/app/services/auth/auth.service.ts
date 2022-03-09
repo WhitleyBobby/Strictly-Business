@@ -9,7 +9,7 @@ import { signOut } from 'firebase/auth';
 export class AuthService {
   constructor(private auth: Auth) { }
 
-  async register({ email, password }) {
+  async signUp({ email, password }) {
     try{
       const user = await createUserWithEmailAndPassword(
         this.auth, email, password
