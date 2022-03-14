@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="ion-no-boarder">
   <ion-toolbar> 
     <ion-title>login</ion-title>
   </ion-toolbar>
@@ -6,6 +6,10 @@
 
 <ion-content class="ion-padding"> 
   <form [formGroup]="credentials" (ngSubmit)="login()">
+
+    <ion-card>
+      <ion-img src="assets/images/Header.png"></ion-img>
+    </ion-card>
 
     <!-- Email fill line -->
     <ion-item fill="solid" class="ion-margin-buttom">
@@ -24,6 +28,6 @@
     
     <!-- Registration button -->
     <ion-button expand="full" type="button" (click)="register">Sign Up</ion-button>
-
   </form>
+  
 </ion-content> 
