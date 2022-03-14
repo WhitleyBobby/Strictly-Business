@@ -9,16 +9,16 @@ import { Auth,
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private auth: Auth) { }
+  constructor(private auth: Auth) {}
 
-  async signUp({ email, password }) {
+  async register({ email, password }) {
     try{
       const user = await createUserWithEmailAndPassword(
         this.auth, email, password
       )
     }
     catch (e) {
-      return null;
+      window.alert(e);
     }
   }
 

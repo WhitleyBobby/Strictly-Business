@@ -34,10 +34,10 @@ export class LoginPage implements OnInit {
     });
   }
 
-  async singUp() {
+  async register() {
     const loading = await this.loadingController.create();
     await loading.present();
-    const user =  this.authService.signUp(this.credentials.value);
+    const user =  this.authService.register(this.credentials.value);
     await loading.dismiss();
 
     if(user){
