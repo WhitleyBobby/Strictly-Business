@@ -16,9 +16,10 @@ export class AuthService {
       const user = await createUserWithEmailAndPassword(
         this.auth, email, password
       )
+      return user;
     }
     catch (e) {
-      window.alert(e);
+      return null;
     }
   }
 
@@ -27,11 +28,12 @@ export class AuthService {
     const user = await signInWithEmailAndPassword(
       this.auth, email, password
     )
+    return user;
   }
   catch (e) {
-    window.alert(e);
+    return null;
   }
+  
 }
-
   logout() { return signOut(this.auth)}
 }
