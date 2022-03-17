@@ -19,7 +19,7 @@ export class AuthService {
       return user;
     }
     catch (e) {
-      return null;
+      window.alert(e);
     }
   }
 
@@ -31,7 +31,7 @@ export class AuthService {
     return user;
   }
   catch (e) {
-    return null;
+    window.alert(e);
   }
   
 }

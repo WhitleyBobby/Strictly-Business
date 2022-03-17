@@ -12,9 +12,7 @@ export class HomePage {
   constructor(
     private authService: AuthService, 
     private router: Router
-    
-    ) {
-    }
+    ) {}
     
     async logout() {
       await this.authService.logout();

@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth'
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideStorage, getStorage } from '@angular/fire/storage'
+import { provideDatabase, getDatabase} from '@angular/fire/database'
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { provideStorage, getStorage } from '@angular/fire/storage'
     provideAuth(() => getAuth()), 
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    provideDatabase(() => getDatabase())
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

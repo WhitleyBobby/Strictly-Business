@@ -21,6 +21,14 @@ const routes: Routes = [
     redirectTo: '',
     pathMatch: 'full'
   },
+  {
+    path: 'add-inventory',
+    loadChildren: () => import('./add-inventory/add-inventory.module').then( m => m.AddInventoryPageModule)
+  },
+  {
+    path: 'edit-inventory',
+    loadChildren: () => import('./edit-inventory/edit-inventory.module').then( m => m.EditInventoryPageModule)
+  },
 ];
 
 @NgModule({

@@ -7,6 +7,7 @@ export const environment = {
   firebase: {
     apiKey: "AIzaSyDibjqqCFmEttJrTCyIqDAgDi-RYn9Bkzk",
     authDomain: "strictly-business-ee797.firebaseapp.com",
+    databaseURL: "https://strictly-business-ee797-default-rtdb.firebaseio.com",
     projectId: "strictly-business-ee797",
     storageBucket: "strictly-business-ee797.appspot.com",
     messagingSenderId: "982581197741",
