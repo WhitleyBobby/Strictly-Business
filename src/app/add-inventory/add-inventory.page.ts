@@ -22,9 +22,9 @@ export class AddInventoryPage implements OnInit {
 
   ngOnInit() {
     this.inventoryForm = this.fb.group({
-      item: ['',[Validators.required]],
-      itemCost: ['',[Validators.required]],
-      itemValue: ['',[Validators.required]]
+      name: ['',[Validators.required]],
+      cost: ['',[Validators.required]],
+      value: ['',[Validators.required]]
     })
   }
   async formSubmit(){
