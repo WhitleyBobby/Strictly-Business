@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="end">
+    <ion-buttons slot="start">
       <ion-button (click)="logout()"><ion-icon name="log-out-outline"></ion-icon></ion-button>
       <!-- <ion-menu-button autoHide="false" menu="menuContent" ></ion-menu-button> -->
     </ion-buttons>
@@ -25,3 +25,28 @@
   
 </ion-content>
 
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button routerLinkActive="tab-selected" routerLink="/home" tab="home">
+      <ion-icon name="list-outline"></ion-icon>
+      <ion-label>Inventory</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button routerLinkActive="tab-selected" routerLink="/add-inventory" tab="add-inventory">
+      <ion-icon name="add-circle"></ion-icon>
+      <ion-label>Add Inventory</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+
+<!-- <ion-buttons>
+<ion-button  slot="bottom" (click)="addInventory()" color="primary">
+  <ion-icon name="add-circle"></ion-icon>
+  <ion-label>Add Inventory</ion-label>
+</ion-button>
+
+<ion-button size="small" slot="bottom" routerLink="/home" color="primary">\
+  <ion-icon name="list-outline"></ion-icon>
+  <ion-label>Inventory</ion-label>
+</ion-button>
+</ion-buttons> -->

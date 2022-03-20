@@ -7,6 +7,7 @@ import { AuthService } from '../services/auth/auth.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage {
 
   constructor(
@@ -14,6 +15,10 @@ export class HomePage {
     private router: Router
     ) {}
     
+    addInventory= function(){
+      this.router.navigateByUrl('/add-inventory');
+    }
+
     async logout() {
       await this.authService.logout();
       this.router.navigateByUrl('/', { replaceUrl: true });
