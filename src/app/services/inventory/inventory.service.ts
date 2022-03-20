@@ -49,6 +49,6 @@ export class InventoryService {
   //Delete Item
   deleteItem(iid: string): Promise<any> {
     const itemDocRef = doc(this.firestore, `${this.INVENTORY_KEY}/${iid}`);
-    return deleteDoc(itemDocRef)
+    return deleteDoc(itemDocRef);
   }
 }
