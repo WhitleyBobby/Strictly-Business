@@ -21,11 +21,11 @@ const routes: Routes = [
   //   redirectTo: '/home',
   //   pathMatch: 'full'
   // },
-  {
-    path: 'add-inventory',
-    loadChildren: () => import('./add-inventory/add-inventory.module').then( m => m.AddInventoryPageModule)
+  // {
+  //   path: 'add-inventory',
+  //   loadChildren: () => import('./add-inventory/add-inventory.module').then( m => m.AddInventoryPageModule)
     
-  },
+  // },
   {
     path: 'edit-inventory/:id',
     loadChildren: () => import('./edit-inventory/edit-inventory.module').then( m => m.EditInventoryPageModule)

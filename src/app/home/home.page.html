@@ -22,14 +22,18 @@
 </ion-header> -->
 
 <ion-content>
-  
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed" (click)="addInventory()">
+    <ion-fab-button color="dark">
+      <ion-icon name="add-outline" color="light"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
-
+<!-- 
 <ion-tabs>
   <ion-tab-bar slot="bottom">
     <ion-tab-button routerLinkActive="tab-selected" routerLink="/home" tab="home">
       <ion-icon name="list-outline"></ion-icon>
-      <ion-label>Inventory</ion-label>
+      <ion-label>Dashboard</ion-label>
     </ion-tab-button>
 
     <ion-tab-button routerLinkActive="tab-selected" routerLink="/add-inventory" tab="add-inventory">
@@ -37,16 +41,5 @@
       <ion-label>Add Inventory</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
-</ion-tabs>
+</ion-tabs> -->
 
-<!-- <ion-buttons>
-<ion-button  slot="bottom" (click)="addInventory()" color="primary">
-  <ion-icon name="add-circle"></ion-icon>
-  <ion-label>Add Inventory</ion-label>
-</ion-button>
-
-<ion-button size="small" slot="bottom" routerLink="/home" color="primary">\
-  <ion-icon name="list-outline"></ion-icon>
-  <ion-label>Inventory</ion-label>
-</ion-button>
-</ion-buttons> -->

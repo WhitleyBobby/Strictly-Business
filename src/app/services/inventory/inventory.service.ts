@@ -3,7 +3,6 @@ import { Inventory } from 'src/app/inventory/inventory';
 import { AngularFireDatabase, AngularFireList,
   AngularFireObject, } from '@angular/fire/compat/database';
 
-
 @Injectable({
   providedIn: 'root'
 })

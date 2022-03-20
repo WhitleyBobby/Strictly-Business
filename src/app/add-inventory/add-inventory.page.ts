@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from "@angular/forms";
+
 import { InventoryService } from '../services/inventory/inventory.service';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-add-inventory',
@@ -11,9 +13,10 @@ import { InventoryService } from '../services/inventory/inventory.service';
 export class AddInventoryPage implements OnInit {
   inventoryForm: FormGroup;  
   constructor(
-    private invServices: InventoryService, 
+    //private invServices: InventoryService, 
     private router: Router, 
-    public fb: FormBuilder
+    public fb: FormBuilder,
+    private modalController: ModalController
   ) { }
 
   ngOnInit() {
@@ -27,11 +30,15 @@ export class AddInventoryPage implements OnInit {
     if(!this.inventoryForm.valid){ 
       return false;
      } else {
-      this.invServices.createItem(this.inventoryForm.value).then(res => {
-        console.log(res)
-        this.inventoryForm.reset();
-        this.router.navigateByUrl('/home', { replaceUrl: true });
-      }) .catch(error => console.log(error));
+      // this.invServices.createItem(this.inventoryForm.value).then(res => {
+      //   console.log(res)
+      //   this.inventoryForm.reset();
+      //   this.router.navigateByUrl('/home', { replaceUrl: true });
+      // }) .catch(error => console.log(error));
     }
+  }
+
+  back() {
+    this.modalController.dismiss();
   }
 }

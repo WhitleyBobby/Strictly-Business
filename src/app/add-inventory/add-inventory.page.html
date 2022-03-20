@@ -5,31 +5,49 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed" (click)="back()">
+    <ion-fab-button color="dark">
+      <ion-icon name="close-outline" color="light"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <ion-list lines="full">
     <form [formGroup]="inventoryForm" (ngSubmit)="formSubmit()">
-      
-      <ion-item>
-        <ion-label position="floating">Item</ion-label>
-        <ion-input formControlItem="item" type="text" required></ion-input>
+
+      <ion-item fill="solid" class="ion-margin-buttom">
+        <ion-input type="item" placeholder="Item" formControlName="item"></ion-input>
+      </ion-item>
+
+      <ion-item fill="solid" class="ion-margin-buttom">
+        <!-- <ion-label position="floating">Item Cost</ion-label> -->
+        <ion-input type="itemCost" placeholder="Item Cost" formControlItem="itemCost" type="text" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="floating">Item Cost</ion-label>
-        <ion-input formControlItem="itemCost" type="text" required></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Item Value</ion-label>
-        <ion-input formControlItem="itemValue" type="text" required></ion-input>
+        <!-- <ion-label position="floating">Item Value</ion-label> -->
+        <ion-input type="itemValue" placeholder="Item Value" formControlItem="itemValue" type="text" required></ion-input>
       </ion-item>
 
       <ion-row>
         <ion-col>
-        <ion-button type="submit" color="primary" shape="full" expand="block">Add Inventory</ion-button>
+        <ion-button [disabled]="inventoryForm.valid" type="submit" color="primary" shape="full" expand="block">Add Inventory</ion-button>
         </ion-col>
     </ion-row>
     </form>
   </ion-list>
 </ion-content>
+<!-- 
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button routerLinkActive="tab-selected" routerLink="/home" tab="home">
+      <ion-icon name="list-outline"></ion-icon>
+      <ion-label>Inventory</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button routerLinkActive="tab-selected" routerLink="/add-inventory" tab="add-inventory">
+      <ion-icon name="add-circle"></ion-icon>
+      <ion-label>Add Inventory</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs> -->
 
 
