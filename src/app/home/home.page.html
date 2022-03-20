@@ -5,41 +5,35 @@
       <!-- <ion-menu-button autoHide="false" menu="menuContent" ></ion-menu-button> -->
     </ion-buttons>
     <ion-title color="dark" >
-      Dashboard
+      Inventory
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>Dashboard</ion-title>
-    <ion-buttons slot="start">
-      <ion-menu-button autoHide="false">
-        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-      </ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header> -->
 
 <ion-content>
   <ion-fab vertical="top" horizontal="end" edge slot="fixed" (click)="addInventory()">
-    <ion-fab-button color="dark">
-      <ion-icon name="add-outline" color="light"></ion-icon>
+    <ion-fab-button>
+      <ion-icon name="add-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
+  <ion-card *ngFor="let item of inventory">
+
+    <ion-card-header>
+      <ion-card-title>{{item.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item href="#" class="ion-activated">
+        <ion-label>Cost: {{item.cost}}</ion-label>
+      </ion-item>
+
+      <ion-item href="#">
+        <ion-label>Value: {{item.value}}</ion-label>
+      </ion-item>
+
+    </ion-card-content>
+
+  </ion-card>
+
 </ion-content>
-<!-- 
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button routerLinkActive="tab-selected" routerLink="/home" tab="home">
-      <ion-icon name="list-outline"></ion-icon>
-      <ion-label>Dashboard</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button routerLinkActive="tab-selected" routerLink="/add-inventory" tab="add-inventory">
-      <ion-icon name="add-circle"></ion-icon>
-      <ion-label>Add Inventory</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs> -->
-

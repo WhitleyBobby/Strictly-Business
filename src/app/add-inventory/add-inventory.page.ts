@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 import { InventoryService } from '../services/inventory/inventory.service';
 import { ModalController } from '@ionic/angular';
+import { Item } from '../inventory/inventory';
 
 @Component({
   selector: 'app-add-inventory',
@@ -13,7 +14,7 @@ import { ModalController } from '@ionic/angular';
 export class AddInventoryPage implements OnInit {
   inventoryForm: FormGroup;  
   constructor(
-    //private invServices: InventoryService, 
+    private invServices: InventoryService, 
     private router: Router, 
     public fb: FormBuilder,
     private modalController: ModalController
@@ -21,24 +22,30 @@ export class AddInventoryPage implements OnInit {
 
   ngOnInit() {
     this.inventoryForm = this.fb.group({
-      item: [''],
-      itemCost: [''],
-      itemValue: ['']
+      item: ['',[Validators.required]],
+      itemCost: ['',[Validators.required]],
+      itemValue: ['',[Validators.required]]
     })
   }
-  formSubmit(){
+  async formSubmit(){
     if(!this.inventoryForm.valid){ 
       return false;
      } else {
-      // this.invServices.createItem(this.inventoryForm.value).then(res => {
-      //   console.log(res)
-      //   this.inventoryForm.reset();
-      //   this.router.navigateByUrl('/home', { replaceUrl: true });
-      // }) .catch(error => console.log(error));
+       console.log('SUBMITTING FORM')
+       console.log(this.inventoryForm);
+      const item: Item = {
+        name: this.inventoryForm.get('name').value,
+        value: this.inventoryForm.get('value').value,
+        cost: this.inventoryForm.get('cost').value
+      }
+      await this.invServices.createItem(item).then( ref => {
+        console.log(ref), 
+        this.modalController.dismiss();
+      })
     }
   }
 
-  back() {
+  close() {
     this.modalController.dismiss();
   }
 }

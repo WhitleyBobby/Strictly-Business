@@ -1,6 +1,6 @@
-export class Inventory {
-    $key: string;
-    item: string;
-    itemCost: number;
-    itemValue: number;
+export class Item {
+    iid?: string;
+    name: string;
+    cost: number;
+    value: number;
 }
