@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 import { InventoryService } from '../services/inventory/inventory.service';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 import { Item } from '../inventory/inventory';
 
 @Component({
@@ -17,7 +17,8 @@ export class AddInventoryPage implements OnInit {
     private invServices: InventoryService, 
     private router: Router, 
     public fb: FormBuilder,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private toastController: ToastController
   ) { }
 
   ngOnInit() {
@@ -39,12 +40,22 @@ export class AddInventoryPage implements OnInit {
         cost: this.inventoryForm.get('cost').value
       }
       await this.invServices.createItem(item).then( ref => {
-        console.log(ref), 
+        console.log(ref),
+        this.presentToast('Item successfully added!', 'success', 'thumbs-up-outline'),
         this.modalController.dismiss();
       })
     }
   }
 
+  async presentToast(message: string, color: string, icon?: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000,
+      color: color,
+      icon: icon
+    });
+    toast.present();
+  }
   close() {
     this.modalController.dismiss();
   }

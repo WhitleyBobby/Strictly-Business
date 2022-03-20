@@ -36,8 +36,8 @@
     </ion-item>
 
     <ion-buttons>
-      <ion-button color="clear">
-        <ion-icon name="create-outline"></ion-icon>
+      <ion-button color="clear" (click)="updateItem(item.name, item.cost, item.value)">
+        <ion-icon name="create-outline" ></ion-icon>
       </ion-button>
     
       <ion-button color="clear" (click)="deleteItem(item.iid)">
