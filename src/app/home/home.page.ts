@@ -15,7 +15,7 @@ import { InventoryService } from '../services/inventory/inventory.service';
 export class HomePage {
 
   inventory: Item[] = [];
-
+  
   constructor(
     private authService: AuthService, 
     private router: Router,
@@ -28,12 +28,24 @@ export class HomePage {
       })
     }
     
+    // Add an item to inventory
     async addInventory(){
       const modal = await this.modalController.create({
         component: AddInventoryPage,
       });
       return await modal.present();
     }
+
+    // Delete an item from inventory
+    async deleteItem(iid) {
+      await this.inventoryService.deleteItem(iid);
+      this.modalController.dismiss();
+      // if (window.confirm('Do you really want to delete?')){
+      //   return this.inventoryService.deleteItem(iid);
+      // }
+    }
+
+    //Logout
     async logout() {
       await this.authService.logout();
       this.router.navigateByUrl('/', { replaceUrl: true });
