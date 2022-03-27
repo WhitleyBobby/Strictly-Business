@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { AddInventoryPage } from '../add-inventory/add-inventory.page';
+import { EditInventoryPage } from '../edit-inventory/edit-inventory.page';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AddInventoryPage } from '../add-inventory/add-inventory.page';
   ],
   declarations: [
     HomePage,
-    AddInventoryPage
+    AddInventoryPage, 
+    EditInventoryPage
   ]
 })
 export class HomePageModule {}

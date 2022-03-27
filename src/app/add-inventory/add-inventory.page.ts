@@ -28,6 +28,7 @@ export class AddInventoryPage implements OnInit {
       value: ['',[Validators.required]]
     })
   }
+
   async formSubmit(){
     if(!this.inventoryForm.valid){ 
       return false;
@@ -56,6 +57,8 @@ export class AddInventoryPage implements OnInit {
     });
     toast.present();
   }
+  
+  //Closes Add item window
   close() {
     this.modalController.dismiss();
   }

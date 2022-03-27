@@ -1,9 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>edit-inventory</ion-title>
+    <ion-title>Edit Item</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed" (click)="close()">
+    <ion-fab-button color="dark">
+      <ion-icon name="close-outline" color="light"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list lines="full">
+    <form [formGroup]="updateInventoryForm">
 
+      <ion-item fill="solid" class="ion-margin-buttom">
+        <ion-input type="name" placeholder="Item" formControlName="name" ></ion-input>
+      </ion-item>
+
+      <ion-item fill="solid" class="ion-margin-buttom">
+        <!-- <ion-label position="floating">Item Cost</ion-label> -->
+        <ion-input type="cost" placeholder="Item Cost($)" formControlName="cost" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <!-- <ion-label position="floating">Item Value</ion-label> -->
+        <ion-input type="value" placeholder="Item Value($)" formControlName="value" type="number"></ion-input>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+        <ion-button (click)="updateEdit()" [disabled]="!updateInventoryForm.valid" type="submit" color="primary" shape="full" expand="block">Update Inventory</ion-button>
+        </ion-col>
+    </ion-row>
+    </form>
+  </ion-list>
 </ion-content>

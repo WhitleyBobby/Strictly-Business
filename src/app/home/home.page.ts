@@ -69,19 +69,18 @@ export class HomePage {
       await alert.present();
     }
 
-    async updateItem(name, cost, value) {
+    async updateItem(iid, name, cost, value) {
       const modal = await this.modalController.create({
         component: EditInventoryPage,
       });
-      await this.inventoryService.updateItem({name, cost, value});
-      const toast = await this.toastCtrl.create({
-        message: 'Item updated!',
-        duration: 2000
-      })
-      toast.present();
+      
+      await this.inventoryService.updateItem({
+        iid, name, cost, value
+      });
+
       return await modal.present();
     }
-
+    
     //Logout
     async logout() {
       await this.authService.logout();

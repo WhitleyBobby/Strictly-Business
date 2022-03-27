@@ -25,3 +25,47 @@
 #container a {
   text-decoration: none;
 }
+
+ion-toggle {
+  --background: #000;
+  --background-checked: #4ca549;
+
+  --handle-background: #fcfcfc;
+  --handle-background-checked: #000;
+}
+ion-toggle {
+  height: 15px;
+  width: 65px;
+}
+// ion-toggle::before{
+//   position: absolute;
+
+//   top: 16px;
+//   left: -1px;
+
+//   content: "Active";
+
+//   color: white;
+//   font-size: 8px;
+
+//   z-index: 1;
+// }
+
+// .toggle {
+//   width: 8vmin;
+//   height: 4vmin;
+// }
+
+// .toggle-inner{ 
+//   width: 3vmin;
+//   height: 3vmin;
+//   top: 0.5vmin;
+// }
+
+// .toggle-checked .toggle-inner{
+//   transform: translate(5vmin, 0, 0);
+// }
+
+// .toggle-icon{
+//   border-radius: 3vmin;
+// }

@@ -16,11 +16,11 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then((m) => m.HomePageModule),
     ...canActivate(redirectUnauthorizedToLogin)
   },
-  // {
-  //   path: '**',
-  //   redirectTo: '/home',
-  //   pathMatch: 'full'
-  // },
+  {
+    path: '**',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
   {
     path: 'menu',
     loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
