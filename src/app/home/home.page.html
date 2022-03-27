@@ -29,17 +29,13 @@
     
     <ion-item>
       <ion-label>Cost: ${{item.cost}} Value: ${{item.value}}</ion-label>
-      <!-- <ion-button color="clear">
-        <ion-icon name="create-outline"></ion-icon>
-      </ion-button>
-      
-      <ion-button color="clear" (click)="deleteItem(inventory)">
-        <ion-icon name="trash-outline"></ion-icon>
-      </ion-button> -->
+    </ion-item>
+    <ion-item>
+      <ion-label> Quantity: {{item.quantity}}</ion-label>
     </ion-item>
 
     <ion-buttons>
-      <ion-button color="clear" (click)="updateItem(item.iid, item.name, item.cost, item.value)">
+      <ion-button color="clear" (click)="updateItem(item.iid, item.name, item.cost, item.value, item.quantity)">
         <ion-icon name="create-outline" ></ion-icon>
       </ion-button>
     
@@ -47,7 +43,8 @@
         <ion-icon name="trash-outline"></ion-icon>
       </ion-button>
 
-      <ion-item>
+      <ion-item slot="end">
+        <ion-label>Active</ion-label>
         <ion-toggle></ion-toggle>
       </ion-item>
     </ion-buttons>

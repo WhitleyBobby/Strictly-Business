@@ -3,4 +3,5 @@ export class Item {
     name: string;
     cost: number;
     value: number;
+    quantity: number;
 }

@@ -69,13 +69,13 @@ export class HomePage {
       await alert.present();
     }
 
-    async updateItem(iid, name, cost, value) {
+    async updateItem(iid, name, cost, value, quantity) {
       const modal = await this.modalController.create({
         component: EditInventoryPage,
       });
       
       await this.inventoryService.updateItem({
-        iid, name, cost, value
+        iid, name, cost, value, quantity
       });
 
       return await modal.present();

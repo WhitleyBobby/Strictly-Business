@@ -27,6 +27,10 @@
         <ion-input type="value" placeholder="Item Value($)" formControlName="value" type="number"></ion-input>
       </ion-item>
 
+      <ion-item fill="solid" class="ion-margin-buttom">
+        <ion-input type="quantity" placeholder="Quantity" formControlName="quantity" type="number"></ion-input>
+      </ion-item>
+
       <ion-row>
         <ion-col>
         <ion-button (click)="formSubmit()" [disabled]="!inventoryForm.valid" type="submit" color="primary" shape="full" expand="block">Add Inventory</ion-button>

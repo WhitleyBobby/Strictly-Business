@@ -42,7 +42,8 @@ export class InventoryService {
     {
       name: item.name, 
       cost: item.cost, 
-      value: item.value
+      value: item.value,
+      quantity: item.quantity
     })
   }
 

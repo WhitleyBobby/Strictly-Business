@@ -25,7 +25,8 @@ export class AddInventoryPage implements OnInit {
     this.inventoryForm = this.fb.group({
       name: ['',[Validators.required]],
       cost: ['',[Validators.required]],
-      value: ['',[Validators.required]]
+      value: ['',[Validators.required]],
+      quantity: ['',[Validators.required]]
     })
   }
 
@@ -38,7 +39,8 @@ export class AddInventoryPage implements OnInit {
       const item: Item = {
         name: this.inventoryForm.get('name').value,
         value: this.inventoryForm.get('value').value,
-        cost: this.inventoryForm.get('cost').value
+        cost: this.inventoryForm.get('cost').value,
+        quantity: this.inventoryForm.get('quantity').value
       }
       await this.invServices.createItem(item).then( ref => {
         console.log(ref),
